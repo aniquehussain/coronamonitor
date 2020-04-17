@@ -1,39 +1,58 @@
 body {
   background-color: #f4f4f4;
-  background-image: url('23913.jpg');
+  background-image: url('978.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
-.heading{
+
+/* .Bckg{
+  z-index: -2;
+  width: 130%;
+  position:absolute;
+  margin: 0px;
+  padding: 0px;
+} */
+.heading {
   font-family: 'Chelsea Market', cursive;
   text-align: center;
   padding-bottom: 6rem;
   padding-top: 2rem;
+  font-size: 3rem;
 }
-.ico{
-  width: 20%;
-}
-.butn{
-  margin: 1% 40% 1% 40%;
 
+.ico {
+  width: 20%;
+  opacity: 100%;
 }
+
+.butn {
+  margin: 1% 40% 1% 40%;
+}
+
 #features {
   padding-top: 12%;
   padding-bottom: 12%;
   text-align: center;
   position: relative;
-  background-color: #fff;
+  background-color: #FFFEFC;
   z-index: 1;
   margin-top: 60%;
+  opacity: 87%;
+  margin-bottom: 8%;
 }
+
 .features-desc {
   font-weight: bold;
   margin: 0 5% 0;
   color: #212529;
 }
+
 .features-para {
   color: #8f8f8f;
   padding: 0.5rem;
@@ -42,97 +61,128 @@ body {
 #footer {
   text-align: center;
   margin: auto;
-  padding-top: 10%;
-  background-color:#212529;
-
+  padding-top: 2%;
+  background-color: #212529;
+  opacity: 90%;
 }
-/* Social icons */
 
+/* Social icons */
 /* Copyright */
 .cpy {
-  padding-top: 3%;
+  padding-top: 1%;
   padding-bottom: 3%;
   color: #fff;
   font-size: 12px;
 }
+
 /* My Signature */
 .myname {
   position: relative;
   bottom: 10px;
   color: #fff;
-  padding-bottom: 12%;
+  padding-bottom: 3%;
   font-size: 12px;
 }
-a{
+
+a {
   color: #212529;
 }
-.site{
+
+.site {
   color: #fff;
 }
-.site:hover{
+
+.site:hover {
   color: #8f8f8f;
 }
-.df{
+
+.df {
   display: none;
 }
-@media only screen and (min-width: 768px){
-#features{
-margin-top: 10%;
-}
- .frm{
-   position: relative;
-   left: 60%;
-   width: 100%;
 
- }
- .butn{
-  margin: 1% 25% 1%;
- }
- #footer {
-   padding-top: 1%;
+@media only screen and (min-width: 768px) {
+  body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+  }
 
- }
- /* Social icons */
+  #features {
+    margin-top: 10%;
+  }
 
- /* Copyright */
- .cpy {
-   padding-top: 1%;
-   padding-bottom: 3%;
-   color: #fff;
- }
- /* My Signature */
- .myname {
-   position: relative;
-   bottom: 10px;
-   color: #fff;
-   padding-bottom: 7%;
- }
+  .heading {
+    font-size: 6rem;
+  }
 
-}
-@media only screen and (min-width: 1000px){
- .butn{
-   margin: 1% 40%;
- }
+  .frm {
+    position: relative;
+    left: 60%;
+    width: 100%;
+  }
+
+  .butn {
+    margin: 1% 25% 1%;
+  }
+
   #footer {
     padding-top: 1%;
-    margin-top: 5%;
   }
-  /* Social icons */
 
+  /* Social icons */
   /* Copyright */
   .cpy {
-    padding-top: 3%;
+    padding-top: 1%;
     padding-bottom: 3%;
     color: #fff;
-    font-size: 1rem;
   }
+
   /* My Signature */
   .myname {
     position: relative;
     bottom: 10px;
     color: #fff;
     padding-bottom: 7%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+  }
+
+  .butn {
+    margin: 1% 40%;
+  }
+
+  .heading {
+    font-size: 6rem;
+  }
+
+  #footer {
+    padding-top: 0.1%;
+    margin-top: 5%;
+  }
+
+  /* Social icons */
+  /* Copyright */
+  .cpy {
+    padding-top: 1%;
+    padding-bottom: 3%;
+    color: #fff;
     font-size: 1rem;
   }
 
+  /* My Signature */
+  .myname {
+    position: relative;
+    bottom: 10px;
+    color: #fff;
+    padding-bottom: 2%;
+    font-size: 1rem;
+  }
 }
