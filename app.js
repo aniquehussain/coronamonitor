@@ -40,11 +40,11 @@ app.post("/", function(req, res) {
         const newCases = jsonData.response[i].cases.new;
         const recoveredCases = jsonData.response[i].cases.recovered;
         const deathCases = jsonData.response[i].deaths.total;
-        res.write("<body style='border-width:0px;'><br><br><h1 style='text-align: center;color:#F20152;font-family: arial;font-weight:500'> STATISTICS </h1><br><br><br><br></body>");
-        res.write("<h3 style='text-align: center; font-family: sans-serif;font-weight:500;'> New cases: " + newCases + "</h3>");
-        res.write("<h3 style='text-align: center;font-family: sans-serif;font-weight:500;'>Total cases: " + totalCases + "</h3>");
-        res.write("<h3 style='text-align: center;font-family: sans-serif;font-weight:500;'> Recovered: " + recoveredCases + "</h3>");
-        res.write("<h3 style='text-align: center;font-family: sans-serif;font-weight:500;'>Total Deceased: " + deathCases + "</h3>");
+        res.write("<body style='border-width:0px;'><br><br><br><br><h1 style='text-align: center;color:#F20152;font-family: arial;font-weight:500;font-size: 5rem'> STATISTICS </h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></body>");
+        res.write("<h2 style='text-align: center; font-family: sans-serif;font-weight:500;font-size:3rem;'> New cases: " + newCases + "</h2>");
+        res.write("<h2 style='text-align: center;font-family: sans-serif;font-weight:500;font-size: 3rem;'>Total cases: " + totalCases + "</h2>");
+        res.write("<h2 style='text-align: center;font-family: sans-serif;font-weight:500;font-size: 3rem;'> Recovered: " + recoveredCases + "</h2>");
+        res.write("<h2 style='text-align: center;font-family: sans-serif;font-weight:500;font-size: 3rem;'>Total Deceased: " + deathCases + "</h2>");
         res.send();
 
       }
