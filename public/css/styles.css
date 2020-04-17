@@ -51,6 +51,7 @@ body {
   padding-top: 3%;
   padding-bottom: 3%;
   color: #fff;
+  font-size: 12px;
 }
 /* My Signature */
 .myname {
@@ -58,6 +59,7 @@ body {
   bottom: 10px;
   color: #fff;
   padding-bottom: 12%;
+  font-size: 12px;
 }
 a{
   color: #212529;
@@ -80,6 +82,25 @@ a{
  .butn{
   margin: 1% 25% 1%;
  }
+ #footer {
+   padding-top: 1%;
+ }
+ /* Social icons */
+
+ /* Copyright */
+ .cpy {
+   padding-top: 1%;
+   padding-bottom: 3%;
+   color: #fff;
+ }
+ /* My Signature */
+ .myname {
+   position: relative;
+   bottom: 10px;
+   color: #fff;
+   padding-bottom: 7%;
+ }
+
 }
 @media only screen and (min-width: 1000px){
  .butn{
@@ -95,13 +116,15 @@ a{
     padding-top: 3%;
     padding-bottom: 3%;
     color: #fff;
+    font-size: 1rem;
   }
   /* My Signature */
   .myname {
     position: relative;
     bottom: 10px;
     color: #fff;
-    padding-bottom: 4%;
+    padding-bottom: 7%;
+    font-size: 1rem;
   }
 
 }
