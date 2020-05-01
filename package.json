@@ -8,6 +8,7 @@
     "countries-list": "^2.5.4",
     "country-list": "^2.2.0",
     "country-state-picker": "^1.1.1",
+    "ejs": "^3.0.2",
     "express": "^4.17.1",
     "request": "^2.88.2"
   },

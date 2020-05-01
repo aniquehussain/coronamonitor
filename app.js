@@ -2,18 +2,27 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const https = require("https");
-var request = require("request");
+const request = require("request");
 const countries = require("countries-list");
-// console.log(countries.countries);
+let totalCases = 0;
+let newCases = 0;
+let recoveredCases = 0;
+let deathCases = 0;
 
+// console.log(countries.countries);
+app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.static("public"));
 
 app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/index.html");
-})
+  res.render('home');
+});
+app.get("/stats",function(req,res){
+  res.render('stats',{TotalCases: totalCases,NewCases:newCases,RecoveredCases:recoveredCases,DeceasedCases:deathCases});
+});
+
 app.post("/", function(req, res) {
   const countryName = req.body.slct;
   const apiKey = "1fc1a156b8mshb01d5ed20621a31p1602c3jsnab438f067e3a";
@@ -28,30 +37,24 @@ app.post("/", function(req, res) {
 
   // Stats
   request(options, function(error, response, body) {
-    var jsonData = JSON.parse(body);
+    let jsonData = JSON.parse(body);
     if (error) throw new Error(error);
     // console.log(countryName);
-    for (var i = 0; i < jsonData.response.length; i++) {
+    for (let i = 0; i < jsonData.response.length; i++) {
       if (jsonData.response[i].country == countryName) {
-        console.log(jsonData.response[i]);
+        // console.log(jsonData.response[i]);
 
 
-        const totalCases = jsonData.response[i].cases.total;
-        const newCases = jsonData.response[i].cases.new;
-        const recoveredCases = jsonData.response[i].cases.recovered;
-        const deathCases = jsonData.response[i].deaths.total;
-        res.write("<body style='border-width:0px;'><br><br><h1 style='text-align: center;color:#F20152;font-family: arial;font-weight:500;font-size: 5rem'> STATISTICS </h1><br><br><br><br><br></body>");
-        res.write("<h2 style='text-align: center; font-family: sans-serif;font-weight:500;font-size:3rem;'> New cases: " + newCases + "</h2>");
-        res.write("<h2 style='text-align: center;font-family: sans-serif;font-weight:500;font-size: 3rem;'>Total cases: " + totalCases + "</h2>");
-        res.write("<h2 style='text-align: center;font-family: sans-serif;font-weight:500;font-size: 3rem;'> Recovered: " + recoveredCases + "</h2>");
-        res.write("<h2 style='text-align: center;font-family: sans-serif;font-weight:500;font-size: 3rem;'>Total Deceased: " + deathCases + "</h2>");
-        res.send();
-
+        totalCases = jsonData.response[i].cases.total;
+        newCases = jsonData.response[i].cases.new;
+        recoveredCases = jsonData.response[i].cases.recovered;
+        deathCases = jsonData.response[i].deaths.total;
+        // res.send();
+        res.redirect("/stats");
       }
     }
     // console.log(jsonData);
   })
-
 });
 
 app.listen(process.env.PORT || 3000, function() {
