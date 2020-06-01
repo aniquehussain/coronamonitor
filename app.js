@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
@@ -25,13 +26,13 @@ app.get("/stats",function(req,res){
 
 app.post("/", function(req, res) {
   const countryName = req.body.slct;
-  const apiKey = "1fc1a156b8mshb01d5ed20621a31p1602c3jsnab438f067e3a";
+
   const options = {
     method: 'GET',
     url: 'https://covid-193.p.rapidapi.com/statistics',
     headers: {
       'x-rapidapi-host': 'covid-193.p.rapidapi.com',
-      'x-rapidapi-key': apiKey
+      'x-rapidapi-key': process.env.API_KEY
     }
   };
 
